@@ -226,10 +226,11 @@ def dqn(n_episodes=2000, max_t=1000, eps_start=1.0, eps_end=0.01, eps_decay=0.99
 
 
 if __name__ == '__main__':
-    agent = Agent(state_size=8, action_size=4, seed=0)
-    scores = dqn(n_episodes=2500)
-
     env = gym.make('LunarLander-v2')
     state = env.reset(seed=0)
     print('State shape: ', env.observation_space.shape)
     print('Number of actions: ', env.action_space.n)
+
+    agent = Agent(state_size=8, action_size=4, seed=0)
+    scores = dqn(n_episodes=2500)
+
